@@ -1,15 +1,12 @@
 package com.planittesting.model.pages;
 
 import java.time.Duration;
-
-import javax.print.DocFlavor.STRING;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     public BasePage (WebDriver driver) {
         this.driver = driver;

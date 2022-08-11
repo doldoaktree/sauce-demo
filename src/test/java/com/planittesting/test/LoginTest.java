@@ -16,15 +16,15 @@ public class LoginTest extends BaseTest {
     //     assertEquals("Epic sadface: Username is required", requiredFieldsError);
     // }
 
-    // @Test
-    // public void verifySuccessfulLogin() {
-    //     var isThereLogout = new LoginPage(driver)
-    //         .setUserName("standard_user")
-    //         .setPassword("secret_sauce")
-    //         .clickLoginButton()
-    //         .clickBurgerMenu()
-    //         .isLogoutOptionVisible();
+    @Test
+    public void verifySuccessfulLogin() {
+        var isThereLogout = new LoginPage(driver)
+            .setCredentials("standard_user", 
+                            "secret_sauce")
+            .clickLoginButton()
+            .clickBurgerMenu()
+            .isLogoutOptionVisible();
         
-    //         assertEquals(true, isThereLogout);
-    // }
+            assertEquals(true, isThereLogout);
+    }
 }

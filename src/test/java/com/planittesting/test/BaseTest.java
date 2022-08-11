@@ -22,7 +22,7 @@ public class BaseTest {
     public void setup() {
         driver = new ChromeDriver();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.manage().window().maximize();
         driver.navigate().to("https://www.saucedemo.com/");
     }
