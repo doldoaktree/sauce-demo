@@ -16,8 +16,8 @@ public class InventoryTests extends BaseTest {
             .clickLoginButton(); //now on inventory page
 
         var isShoppingCartBadgeDisplayed = new InventoryPage(driver)
-                                .clickAddToCart()
-                                .isShoppingCartBadgeVisible(); 
+            .clickAddToCart()
+            .isShoppingCartBadgeVisible(); 
 
         assertEquals("1", isShoppingCartBadgeDisplayed.getText());
     }
