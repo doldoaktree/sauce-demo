@@ -8,4 +8,4 @@ TEST CASES FOR https://www.saucedemo.com/
 Implemented
 1. Test required fields error message when username and password left blank and login is clicked.
 2. Test successful login by making sure logout is visible.
-3. Verify items added to cart when "Add to cart" is clicked.
+3. Verify shopping badge icon shows up when "Add to cart" is clicked.
