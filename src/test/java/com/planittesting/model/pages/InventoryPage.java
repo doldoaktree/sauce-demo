@@ -20,15 +20,7 @@ public class InventoryPage extends BasePage {
         return this;
     }
 
-    // public Boolean isShoppingCartBadgeVisible() {
-    //     return new WebDriverWait(driver, Duration.ofSeconds(4))
-    //         .until(driver -> {
-    //             var isThereShoppingBadge = driver.findElement(By.id("shopping_cart_badge"));            
-    //         });
-    // }
-
     public WebElement isShoppingCartBadgeVisible() {
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(4));
-           return wait.until(driver -> driver.findElement(By.className("shopping_cart_badge")));
+        return driver.findElement(By.className("shopping_cart_badge"));
     }
 }
