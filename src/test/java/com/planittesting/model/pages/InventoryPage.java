@@ -4,7 +4,6 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InventoryPage extends BasePage {
@@ -23,11 +22,13 @@ public class InventoryPage extends BasePage {
         return this;
     }
 
-    public WebElement isShoppingCartBadgeVisible() {
-        return driver.findElement(By.className("shopping_cart_badge"));
+    public Boolean isShoppingCartBadgeVisible() {
+        var element = driver.findElements(By.className("shopping_cart_badge"));
+        return !element.isEmpty(); 
     }
+        
 
-    public Boolean isLogoutOptionVisible() {
+    public Boolean isLogoutButtonDisplayed() {
         return new WebDriverWait(driver, Duration.ofSeconds(4))
             .until(driver -> {
                var element = driver.findElement(By.id("logout_sidebar_link"));

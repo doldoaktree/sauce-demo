@@ -15,7 +15,12 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage clickLoginButton() {
+    public InventoryPage clickLoginButton() {
+        driver.findElement(By.id("login-button")).click();
+        return new InventoryPage(driver);
+    }
+
+    public LoginPage clickLoginButtonFailure() {
         driver.findElement(By.id("login-button")).click();
         return this;
     }
