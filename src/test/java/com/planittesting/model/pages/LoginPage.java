@@ -26,6 +26,6 @@ public class LoginPage extends BasePage {
     }
 
     public String getRequiredFieldsError() {
-       return driver.findElement(By.className("error-message-container")).getText();
+        return driver.findElement(By.className("error-message-container")).getText();
     }
 }

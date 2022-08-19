@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import com.planittesting.model.pages.LoginPage;
 
-public class LoginTest extends BaseTest {
+public class LoginTests extends BaseTest {
     @Test
     public void verifyRequiredFieldsError() {
         var requiredFieldsError = new LoginPage(driver)

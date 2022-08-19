@@ -17,7 +17,7 @@ public class BaseTest {
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
     }
-    
+
     @BeforeEach
     public void setup() {
         driver = new ChromeDriver();
@@ -33,4 +33,3 @@ public class BaseTest {
     }
 
 }
-

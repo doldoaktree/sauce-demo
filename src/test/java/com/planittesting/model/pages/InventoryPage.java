@@ -1,7 +1,6 @@
 package com.planittesting.model.pages;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,25 +24,24 @@ public class InventoryPage extends BasePage {
     }
 
     public Boolean isShoppingCartBadgeVisible() {
-        return !getShoppingCartBadge().isEmpty(); 
+        return !getShoppingCartBadge().isEmpty();
     }
-
-    public List<WebElement> getShoppingCartBadge() {
-       return driver.findElements(By.className("shopping_cart_badge"));
-    } 
 
     public Boolean isLogoutButtonDisplayed() {
         return new WebDriverWait(driver, Duration.ofSeconds(4))
-            .until(driver -> {
-               var element = driver.findElement(By.id("logout_sidebar_link"));
-               return element.getText().trim().toUpperCase().equals("LOGOUT");
-            });
+                .until(driver -> {
+                    var element = driver.findElement(By.id("logout_sidebar_link"));
+                    return element.getText().trim().toUpperCase().equals("LOGOUT");
+                });
     }
 
     public WebElement getRemoveButton() {
         return driver.findElement(By.id("remove-sauce-labs-backpack"));
     }
 
+    public CartPage clickShoppingCart() {
+        driver.findElement(By.className("shopping_cart_link")).click();
+        return new CartPage(driver);
+    }
 
-    
 }
