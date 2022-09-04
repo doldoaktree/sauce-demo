@@ -1,5 +1,8 @@
 package com.planittesting.model.pages;
 
+import java.text.DecimalFormat;
+
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -25,15 +28,25 @@ public class CheckOutPage extends BasePage {
         return driver.findElement(By.className("summary_value_label")).getText();
     }
 
-    public Double totalPriceInCheckout() {
+    public double totalPriceInCheckout() {
         var listOfPrices = driver.findElements(By.className("inventory_item_price"));
-        Double totalPrice = 0.0;
+        double itemTotal = 0.0;
+        double totalPriceBeforeTax = 0.0;
 
         for (int i = 0; i < listOfPrices.size(); i++) {
-            Double price = Double.parseDouble(listOfPrices.get(i).getText().replace("$", ""));
-            totalPrice = totalPrice + price;
+            totalPriceBeforeTax = Double.parseDouble(listOfPrices.get(i).getText().replace("$", ""));
+            itemTotal = itemTotal + totalPriceBeforeTax;
         }
 
-        return totalPrice;
+        double tax = itemTotal * 0.08;
+        double priceAfterTax = itemTotal + tax;
+
+        
+        double output = Double.parseDouble(Double.toString(priceAfterTax));
+
+        String formatter = "##.##";
+        DecimalFormat df = new DecimalFormat(formatter);
+
+        return Double.parseDouble(df.format(output));
     }
 }

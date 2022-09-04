@@ -23,9 +23,9 @@ public class CheckOutTests extends BaseTest {
                 .clickCheckOutButton();
 
         var paymentInformation = checkOutPage.getPaymentInformation();
-        var totalPrice = checkOutPage.totalPriceInCheckout();
+        var grandTotal = checkOutPage.totalPriceInCheckout();
 
         assertEquals("SauceCard #31337", paymentInformation);
-        assertEquals(43.18, totalPrice);
+        assertEquals(43.18, grandTotal);
     }
 }
